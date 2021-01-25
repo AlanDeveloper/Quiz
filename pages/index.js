@@ -42,7 +42,7 @@ export default function Home() {
             </Widget.Content>
         </Widget>
         <Footer />
-        <GitHubCorner projectUrl="#"/>
+            <GitHubCorner projectUrl="https://github.com/AlanDeveloper"/>
       </QuizContainer>
     </QuizBackground>
   );
