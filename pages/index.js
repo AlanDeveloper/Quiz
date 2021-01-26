@@ -1,22 +1,35 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable func-names */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import db from '../db.json';
 
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+const Button = styled.button`
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px 20px;
+  width: 100%;
+  color: ${({ theme }) => theme.colors.contrastText};
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.borderRadius}
+`;
 
-const Input = styled.div`
-  padding: 10px;
+const Input = styled.input`
+  width: 100%;
+  padding: 15px 20px;
+  outline: 0;
+  border: 3px solid ${({ theme }) => theme.colors.secondary};
+  border-radius: ${({ theme }) => theme.borderRadius}
 `;
 
 export const QuizContainer = styled.div`
@@ -50,17 +63,16 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input
+              <Input
                 onChange={function (e) {
                   setName(e.target.value);
                 }}
-                placeholder="Diz ai seu nome"
+                placeholder="Diz ai seu nome pra jogar :)"
               />
-              <Input type="text" placeholder="ola">ola</Input>
-              <button type="submit" disabled={name.length === 0}>
+              <Button type="submit" disabled={name.length === 0}>
                 Jogar
                 {name}
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
