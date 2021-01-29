@@ -4,51 +4,22 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import db from '../db.json';
 
+import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
-
-const Button = styled.button`
-  margin-top: 20px;
-  text-align: center;
-  padding: 15px 20px;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.contrastText};
-  border: 0;
-  cursor: pointer;
-  outline: 0;
-  background-color: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius}
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 15px 20px;
-  outline: 0;
-  border: 3px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: ${({ theme }) => theme.borderRadius}
-`;
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import QuizContainer from '../src/components/QuizContainer';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
 
   return (
-    <QuizBackground>
+    <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>AluraQuiz</title>
       </Head>
@@ -64,14 +35,12 @@ export default function Home() {
             }}
             >
               <Input
-                onChange={function (e) {
-                  setName(e.target.value);
-                }}
+                name="nomeDoUsuario"
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Diz ai seu nome pra jogar :)"
               />
               <Button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
+                {`Jogar ${name}`}
               </Button>
             </form>
           </Widget.Content>
