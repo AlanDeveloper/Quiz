@@ -1,42 +1,69 @@
 {
-    "bg": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "bg": "https://wallpaperaccess.com/full/107441.jpg",
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
         {
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
+            "image": "https://vejaonline.jp/wp-content/uploads/2019/09/godzilla-king-of-monsters.png",
+            "title": "Godzilla é uma palavra traduzida de:",
             "description": "Essa é pra aquecer",
-            "answer": 2,
+            "answer": 0,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "Gojira",
+                "Rodan",
+                "King Kong",
+                "Guidorah"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
+            "image": "https://cinepop.com.br/wp-content/uploads/2017/12/222050-godzillaanimedomain.jpg",
+            "title": "Altura estimada do Godzilla?",
             "description": "Faz tempo em haha",
-            "answer": 0,
+            "answer": 2,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "70 metros",
+                "180 metros",
+                "120 metros",
+                "50 metros"
+            ]
+        },
+        {
+            "image": "https://pa1.narvii.com/6573/c19ca5c01a0099eeffee7bc2c7c0c16069c1646f_hq.gif",
+            "title": "O que fez Godzilla ter esse tamanho colossal?",
+            "description": "Vamos ver se consegue",
+            "answer": 3,
+            "alternatives": [
+                "Caça de outros kaijus",
+                "Hibernação durante séculos",
+                "Ficar perto do núcleo da Terra onde é mais quente",
+                "Se alimentando de Radiação"
+            ]
+        },
+        {
+            "image": "https://64.media.tumblr.com/69964185b60278bce4d21bff147983d1/1812589a4c989b46-6d/s540x810/e83777757bf978c19f958b2cc8913882579fff4b.gifv",
+            "title": "Godzilla é classificado como:",
+            "description": "Último teste",
+            "answer": 1,
+            "alternatives": [
+                "Beta",
+                "Alfa",
+                "Omega"
             ]
         }
     ],
     "external": [
-        ""
+        "https://aluraquiz-coffee.leonardot07.vercel.app/",
+        "https://harry-potter-quiz.brunogerbasi.vercel.app/",
+        "https://naruto-quiz.llofyy.vercel.app/"
     ],
     "theme": {
         "colors": {
-            "primary": "#b23c17",
-            "secondary": "#ff5722",
-            "mainBg": "#007bb2",
+            "primary": "#545976",
+            "secondary": "#93b8d5",
+            "mainBg": "#262b31",
             "contrastText": "#FFFFFF",
-            "wrong": "#FF5722",
-            "success": "#4CAF50"
+            "wrong": "#dcfaff",
+            "success": "#6493bd"
         },
         "borderRadius": "4px"
     }

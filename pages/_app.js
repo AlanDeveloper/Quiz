@@ -36,6 +36,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+        <title>AluraQuiz</title>
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

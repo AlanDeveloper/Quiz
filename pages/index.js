@@ -1,10 +1,12 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable func-names */
 import React, { useState } from 'react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import db from '../db.json';
+import Link from '../src/components/Link';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
@@ -19,13 +21,19 @@ export default function Home() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>AluraQuiz</title>
-      </Head>
       <QuizContainer>
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
-            <h1>The Legend of Code</h1>
+            <h1>Você é #TeamZilla ?</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={function (e) {
@@ -44,13 +52,52 @@ export default function Home() {
             </form>
           </Widget.Content>
         </Widget>
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-            <p>Lorem ddsahd dadsd ds....</p>
+
+            <ul>
+
+              {db.external.map((link) => {
+                const [projectName, githubUser] = link
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+
+                return (
+                  <li key={link}>
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}__${githubUser}`}
+                    >
+                      {`${githubUser}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        />
         <GitHubCorner projectUrl="https://github.com/AlanDeveloper" />
       </QuizContainer>
     </QuizBackground>
